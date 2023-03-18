@@ -2,6 +2,11 @@ FROM node:latest as build
 
 ARG env=production
 
+ARG MAIL_PORT
+ARG MAIL_HOST
+ARG MAIL_USER
+ARG MAIL_PASSWORD
+
 WORKDIR /usr/src/app
 
 COPY package*.json .
