@@ -47,7 +47,7 @@ export class QueuesManager {
     this.queues.forEach((job) => {
       job.workers.forEach((worker) => {
         // Process irá processar qualquer dado armazenado na fila específica.
-        job.queue.process(worker.process.handler);
+        job.queue.process(async (data) => worker.process.handler(data));
       });
     });
   }

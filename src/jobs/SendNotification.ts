@@ -21,7 +21,9 @@ export class SendNotification implements IJobs<IUserProps, void> {
   };
 
   async handler(data: any): Promise<void> {
-    const { email, name } = data;
+    const {
+      data: { name, email },
+    } = data;
 
     await MailProvider.sendMail({
       from: "Queue Test <queue@queuetest.com.br>",
